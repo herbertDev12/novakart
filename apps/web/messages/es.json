@@ -1,6 +1,42 @@
 {
-  "common": {},
-  "navigation": {},
+  "common": {
+    "brand": "Novakart",
+    "save": "Guardar",
+    "viewAll": "Ver todo"
+  },
+  "navigation": {
+    "allCategories": "Todas las categorías",
+    "account": "Cuenta",
+    "cart": "Carrito",
+    "cartWithCount": "Carrito, {count} artículos",
+    "searchPlaceholder": "Busca lo que quieras",
+    "searchLabel": "Buscar productos",
+    "toggleTheme": "Alternar modo oscuro"
+  },
+  "home": {
+    "promos": {
+      "label": "Anuncios",
+      "restock": {
+        "eyebrow": "Nuevo esta semana",
+        "title": "Gres y lino, de vuelta en stock",
+        "cta": "Comprar"
+      },
+      "shipping": {
+        "eyebrow": "Tiempo limitado",
+        "title": "Envío gratis en pedidos de más de $50",
+        "cta": "Ver detalles"
+      },
+      "members": {
+        "eyebrow": "Miembros",
+        "title": "Un adelanto de la colección del próximo mes",
+        "cta": "Echar un vistazo"
+      }
+    },
+    "catalog": {
+      "title": "Selección de hoy",
+      "subtitle": "Objetos cotidianos, hechos con intención."
+    }
+  },
   "errors": {
     "api": {
       "UNKNOWN_ERROR": "Ocurrió un error. Por favor, inténtalo de nuevo.",

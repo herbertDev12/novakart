@@ -1,6 +1,42 @@
 {
-  "common": {},
-  "navigation": {},
+  "common": {
+    "brand": "Novakart",
+    "save": "Save",
+    "viewAll": "View all"
+  },
+  "navigation": {
+    "allCategories": "All categories",
+    "account": "Account",
+    "cart": "Cart",
+    "cartWithCount": "Cart, {count} items",
+    "searchPlaceholder": "Search for anything",
+    "searchLabel": "Search products",
+    "toggleTheme": "Toggle dark mode"
+  },
+  "home": {
+    "promos": {
+      "label": "Announcements",
+      "restock": {
+        "eyebrow": "New this week",
+        "title": "Stoneware & linen, restocked",
+        "cta": "Shop now"
+      },
+      "shipping": {
+        "eyebrow": "Limited time",
+        "title": "Free shipping on orders over $50",
+        "cta": "See details"
+      },
+      "members": {
+        "eyebrow": "Members",
+        "title": "An early look at next month's drop",
+        "cta": "Take a look"
+      }
+    },
+    "catalog": {
+      "title": "Today's picks",
+      "subtitle": "Everyday objects, thoughtfully made."
+    }
+  },
   "errors": {
     "api": {
       "UNKNOWN_ERROR": "Something went wrong. Please try again.",
