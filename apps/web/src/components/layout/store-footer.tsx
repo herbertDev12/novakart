@@ -1,7 +1,7 @@
 export function StoreFooter() {
   return (
     <footer className="border-t">
-      <div className="mx-auto max-w-6xl px-4 py-6 text-sm text-muted-foreground">
+      <div className="text-muted-foreground mx-auto max-w-[1280px] px-5 py-6 text-sm">
         © {new Date().getFullYear()} Novakart
       </div>
     </footer>
