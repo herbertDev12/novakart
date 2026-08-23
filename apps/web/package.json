@@ -16,6 +16,7 @@
     "@repo/components": "workspace:*",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "lucide-react": "^1.30.0",
     "next": "16.2.0",
     "next-auth": "5.0.0-beta.32",
     "next-intl": "^4.13.5",
