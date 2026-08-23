@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Geist } from "next/font/google";
+import { Figtree, Fraunces } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -9,7 +9,13 @@ import { cn } from "@/lib/utils";
 import { routing } from "@/i18n/routing";
 import { AuthSessionProvider } from "@/providers/session-provider";
 
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
+const figtree = Figtree({ subsets: ["latin"], variable: "--font-sans" });
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  axes: ["SOFT", "opsz"],
+});
 
 export const metadata: Metadata = {
   title: "Novakart",
@@ -35,7 +41,10 @@ export default async function RootLayout({
   setRequestLocale(locale);
 
   return (
-    <html lang={locale} className={cn("font-sans", geist.variable)}>
+    <html
+      lang={locale}
+      className={cn("font-sans", figtree.variable, fraunces.variable)}
+    >
       <body>
         <NuqsAdapter>
           <NextIntlClientProvider>
