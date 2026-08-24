@@ -6,19 +6,23 @@ import { toApiError, toNetworkError } from "./errors";
 
 type FetcherOptions = RequestInit & {
   next?: { tags?: string[]; revalidate?: number | false };
+  skipAuth?: boolean;
 };
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-export async function httpFetcher<T>(
+export async function fetcher<T>(
   url: string,
   options: FetcherOptions = {},
 ): Promise<Result<T>> {
   const headers = new Headers(options.headers);
   headers.set("Content-Type", "application/json");
   headers.set("Accept-Language", await getLocale());
+
+  // TODO(F3.1): once the session carries accessToken, inject
+  // Authorization: Bearer here when !options.skipAuth.
 
   for (let attempt = 0; attempt <= RETRY.maxAttempts; attempt++) {
     try {
