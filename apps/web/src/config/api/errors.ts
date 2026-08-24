@@ -18,3 +18,13 @@ export function toNetworkError(cause: unknown): ApiError {
     message: cause instanceof Error ? cause.message : "Network request failed",
   };
 }
+
+type TranslateFn = {
+  (key: string): string;
+  has: (key: string) => boolean;
+};
+
+export function translateApiError(t: TranslateFn, error: ApiError): string {
+  const key = `errors.api.${error.code}`;
+  return t.has(key) ? t(key) : error.message;
+}
