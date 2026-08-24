@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { Heart, Package } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { AspectRatio } from "@repo/components/ui/aspect-ratio";
 import { Button } from "@repo/components/ui/button";
 import { Card, CardContent } from "@repo/components/ui/card";
 import { cn } from "@/lib/utils";
-import { formatMoney } from "@/lib/utils/money";
+import { Money } from "@/components/common/money";
 import type { MockProduct } from "@/lib/mock/home";
 
 const tileClasses: Record<MockProduct["tile"], string> = {
@@ -21,7 +21,6 @@ type Props = {
 };
 
 export function ProductCard({ product, priority = false }: Props) {
-  const locale = useLocale();
   const t = useTranslations("common");
 
   return (
@@ -63,7 +62,7 @@ export function ProductCard({ product, priority = false }: Props) {
         </span>
         <h3 className="text-sm leading-snug font-semibold">{product.name}</h3>
         <span className="text-primary mt-1 font-semibold tabular-nums">
-          {formatMoney(product.price, locale)}
+          <Money value={product.price} />
         </span>
       </CardContent>
     </Card>
