@@ -1,4 +1,4 @@
-import { ProductCard } from "@/components/storefront/product-card";
+import { ProductCard } from "./product-card";
 import type { MockProduct } from "@/lib/mock/home";
 
 type Props = {

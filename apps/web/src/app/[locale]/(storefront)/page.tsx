@@ -1,8 +1,8 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { buttonVariants } from "@repo/components/ui/button";
-import { PromoCarousel } from "@/components/storefront/promo-carousel";
-import { ProductGrid } from "@/components/storefront/product-grid";
-import { SectionHeading } from "@/components/storefront/section-heading";
+import { PromoCarousel } from "@/modules/promotions/components/promo-carousel";
+import { ProductGrid } from "@/modules/products/components/list/product-grid";
+import { SectionHeading } from "@/components/common/section-heading";
 import { Link } from "@/i18n/navigation";
 import { featuredProducts, promoSlides } from "@/lib/mock/home";
 import { clientRoutes } from "@/routes/client-routes";
@@ -15,7 +15,7 @@ export default async function Home({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const t = await getTranslations("home.catalog");
+  const t = await getTranslations("products.catalog");
   const tCommon = await getTranslations("common");
 
   return (

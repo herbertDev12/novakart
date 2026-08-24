@@ -1,3 +1,5 @@
+// TODO(F1.2): delete this module once the home page reads featured products
+// and promo slides from the real API.
 import type { Money } from "@/lib/types/money";
 
 export type PromoSlide = {

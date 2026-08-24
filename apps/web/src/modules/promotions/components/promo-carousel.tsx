@@ -21,7 +21,7 @@ type Props = {
 };
 
 export function PromoCarousel({ slides }: Props) {
-  const t = useTranslations("home.promos");
+  const t = useTranslations("promotions");
 
   return (
     <Carousel
