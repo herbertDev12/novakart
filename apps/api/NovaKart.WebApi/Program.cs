@@ -1,6 +1,7 @@
 using DotNetEnv;
-using Microsoft.EntityFrameworkCore;
+using NovaKart.Application;
 using NovaKart.Infraestructure;
+using NovaKart.WebApi.Endpoints.v1.Products;
 
 Env.TraversePath().Load();
 
@@ -10,11 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING")
-    ?? builder.Configuration.GetConnectionString("DefaultConnection");
-
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseNpgsql(connectionString));
+builder.Services.AddApplication();
+builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 
@@ -25,6 +23,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.MapProductsEndpoints();
 
 var summaries = new[]
 {

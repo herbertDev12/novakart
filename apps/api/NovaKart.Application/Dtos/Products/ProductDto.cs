@@ -10,3 +10,9 @@ public record ProductDto(
     int Stock,
     bool IsActive,
     ProductCategoryDto Category);
+
+public record GetProductsResponse(
+    List<ProductDto> Products,
+    int TotalCount,
+    int PageNumber,
+    int PageSize);
