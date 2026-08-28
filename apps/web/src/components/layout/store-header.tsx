@@ -1,5 +1,8 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { LayoutGrid, Moon, Search, ShoppingCart } from "lucide-react";
+import { LayoutGrid, Moon, Search, ShoppingCart, Sun } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Avatar, AvatarFallback } from "@repo/components/ui/avatar";
 import { Badge } from "@repo/components/ui/badge";
@@ -9,12 +12,17 @@ import {
   InputGroupAddon,
   InputGroupInput,
 } from "@repo/components/ui/input-group";
+import { useTheme } from "@repo/components/lib/theme";
 import { Link } from "@/i18n/navigation";
 import { clientRoutes } from "@/routes/client-routes";
 
 export function StoreHeader() {
   const t = useTranslations("navigation");
   const tCommon = useTranslations("common");
+  const { resolvedTheme, setTheme } = useTheme();
+
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   return (
     <header className="bg-brand text-brand-foreground shadow-sm">
@@ -69,14 +77,20 @@ export function StoreHeader() {
             </Badge>
           </Button>
 
-          {/* TODO: wire to next-themes once the theme provider is in place. */}
           <Button
             variant="ghost"
             size="icon"
             aria-label={t("toggleTheme")}
             className="bg-card text-foreground hover:bg-accent hover:text-accent-foreground size-[42px] rounded-full"
+            onClick={() =>
+              setTheme(resolvedTheme === "dark" ? "light" : "dark")
+            }
           >
-            <Moon className="size-[18px]" />
+            {mounted && resolvedTheme === "dark" ? (
+              <Sun className="size-[18px]" />
+            ) : (
+              <Moon className="size-[18px]" />
+            )}
           </Button>
 
           <Avatar className="size-[42px]">

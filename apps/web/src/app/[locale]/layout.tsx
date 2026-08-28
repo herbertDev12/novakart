@@ -8,6 +8,7 @@ import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { cn } from "@/lib/utils";
 import { routing } from "@/i18n/routing";
 import { AuthSessionProvider } from "@/providers/session-provider";
+import { ThemeProvider } from "@/providers/theme-provider";
 
 const figtree = Figtree({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -44,13 +45,16 @@ export default async function RootLayout({
     <html
       lang={locale}
       className={cn("font-sans", figtree.variable, fraunces.variable)}
+      suppressHydrationWarning
     >
       <body>
-        <NuqsAdapter>
-          <NextIntlClientProvider>
-            <AuthSessionProvider>{children}</AuthSessionProvider>
-          </NextIntlClientProvider>
-        </NuqsAdapter>
+        <ThemeProvider>
+          <NuqsAdapter>
+            <NextIntlClientProvider>
+              <AuthSessionProvider>{children}</AuthSessionProvider>
+            </NextIntlClientProvider>
+          </NuqsAdapter>
+        </ThemeProvider>
       </body>
     </html>
   );
