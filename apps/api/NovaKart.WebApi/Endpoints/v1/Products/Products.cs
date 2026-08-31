@@ -1,5 +1,6 @@
 using Mediator;
 using NovaKart.Application.Features.Products.Query.GetProducts;
+using NovaKart.WebApi.Common;
 
 namespace NovaKart.WebApi.Endpoints.v1.Products
 {
@@ -20,7 +21,7 @@ namespace NovaKart.WebApi.Endpoints.v1.Products
             {
                 var query = new GetProductsQuery(pageNumber, pageSize, searchTerm, categoryId, minPrice, maxPrice, isActive);
                 var result = await mediator.Send(query, cancellationToken);
-                return Results.Ok(result);
+                return result.ToHttpResult();
             })
             .WithName("GetProducts")
             .WithTags("Products");

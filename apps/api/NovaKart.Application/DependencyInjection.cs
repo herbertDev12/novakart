@@ -1,4 +1,7 @@
+using FluentValidation;
+using Mediator;
 using Microsoft.Extensions.DependencyInjection;
+using NovaKart.Application.Common.Behaviors;
 
 namespace NovaKart.Application
 {
@@ -10,6 +13,9 @@ namespace NovaKart.Application
             {
                 options.ServiceLifetime = ServiceLifetime.Scoped;
             });
+
+            services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
             return services;
         }
