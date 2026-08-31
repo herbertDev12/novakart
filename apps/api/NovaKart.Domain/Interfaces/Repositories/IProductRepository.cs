@@ -10,7 +10,7 @@ namespace NovaKart.Domain.Interfaces
     {
         Task<List<Product>> GetAllAsync(CancellationToken cancellationToken);
 
-        Task<Product> GetProductByIdAsync(Guid Id, CancellationToken cancellationToken);
+        Task<Product?> GetProductByIdAsync(Guid id, CancellationToken cancellationToken);
 
         Task<(List<Product> Items, int TotalCount)> GetPagedAsync(
             int pageNumber,

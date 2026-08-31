@@ -21,21 +21,9 @@ namespace NovaKart.Infraestructure.Persistence.Repositories
             return await _products.AsNoTracking().ToListAsync(cancellationToken);
         }
 
-        public async Task<Product> GetProductByIdAsync(Guid Id, CancellationToken cancellationToken)
+        public async Task<Product?> GetProductByIdAsync(Guid id, CancellationToken cancellationToken)
         {
-            if (Id == Guid.Empty)
-            {
-                throw new ArgumentException("Invalid product ID.", nameof(Id));
-            }
-
-            var response = await _products.AsNoTracking().FirstOrDefaultAsync(p => p.Id == Id, cancellationToken);
-
-            if (response == null)
-            {
-                throw new KeyNotFoundException($"Product with ID {Id} not found.");
-            }
-
-            return response;
+            return await _products.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id, cancellationToken);
         }
 
         public async Task<(List<Product> Items, int TotalCount)> GetPagedAsync(
