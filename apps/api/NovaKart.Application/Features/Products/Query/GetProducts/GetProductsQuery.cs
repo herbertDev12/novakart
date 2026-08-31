@@ -1,4 +1,5 @@
 using Mediator;
+using NovaKart.Application.Common;
 using NovaKart.Application.Dtos.Products;
 
 namespace NovaKart.Application.Features.Products.Query.GetProducts
@@ -11,5 +12,5 @@ namespace NovaKart.Application.Features.Products.Query.GetProducts
         decimal? MinPrice = null,
         decimal? MaxPrice = null,
         bool? IsActive = null
-    ) : IRequest<GetProductsResponse>;
+    ) : IRequest<Result<GetProductsResponse>>;
 }

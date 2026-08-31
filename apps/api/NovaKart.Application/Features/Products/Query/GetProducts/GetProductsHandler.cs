@@ -1,12 +1,13 @@
 using System.Linq;
 using Mediator;
+using NovaKart.Application.Common;
 using NovaKart.Application.Dtos.Categories;
 using NovaKart.Application.Dtos.Products;
 using NovaKart.Domain.Interfaces;
 
 namespace NovaKart.Application.Features.Products.Query.GetProducts
 {
-    public class GetProductsHandler : IRequestHandler<GetProductsQuery, GetProductsResponse>
+    public class GetProductsHandler : IRequestHandler<GetProductsQuery, Result<GetProductsResponse>>
     {
         private readonly IProductRepository _productRepository;
 
@@ -15,7 +16,7 @@ namespace NovaKart.Application.Features.Products.Query.GetProducts
             _productRepository = productRepository;
         }
 
-        public async ValueTask<GetProductsResponse> Handle(GetProductsQuery request, CancellationToken cancellationToken)
+        public async ValueTask<Result<GetProductsResponse>> Handle(GetProductsQuery request, CancellationToken cancellationToken)
         {
             var (items, totalCount) = await _productRepository.GetPagedAsync(
                 request.PageNumber,
