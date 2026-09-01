@@ -213,7 +213,7 @@ These are not features. They are the price of the horizontal phase, paid once. K
 
 ---
 
-### F0.1 — Realign the home page into the architecture ⬜
+### F0.1 — Realign the home page into the architecture ✅
 
 | | |
 |---|---|
@@ -238,7 +238,7 @@ Steps:
 
 ---
 
-### F0.2 — The money render boundary ⬜
+### F0.2 — The money render boundary ✅
 
 | | |
 |---|---|
@@ -255,7 +255,7 @@ Steps:
 
 ---
 
-### F0.3 — API error translation ⬜
+### F0.3 — API error translation ✅
 
 | | |
 |---|---|
@@ -271,7 +271,7 @@ Steps:
 
 ---
 
-### F0.4 — Auth-aware fetcher ⬜
+### F0.4 — Auth-aware fetcher ✅
 
 | | |
 |---|---|
@@ -289,7 +289,7 @@ Steps:
 
 ---
 
-### F0.5 — Interceptor pipeline ⬜
+### F0.5 — Interceptor pipeline ✅
 
 | | |
 |---|---|
@@ -307,7 +307,7 @@ Steps:
 
 ---
 
-### F0.6 — Route-group error boundaries ⬜
+### F0.6 — Route-group error boundaries ✅
 
 | | |
 |---|---|
@@ -322,7 +322,7 @@ Steps:
 
 ---
 
-### F0.7 — Theme toggle ⬜
+### F0.7 — Theme toggle ✅
 
 | | |
 |---|---|
@@ -348,7 +348,7 @@ This is where the horizontal infrastructure finally gets its first real consumer
 
 ---
 
-### F1.1 — Product domain foundation ⬜
+### F1.1 — Product domain foundation ✅
 
 | | |
 |---|---|
@@ -368,7 +368,7 @@ This is where the horizontal infrastructure finally gets its first real consumer
 
 ---
 
-### F1.2 — Home page on real data ⬜
+### F1.2 — Home page on real data ✅
 
 | | |
 |---|---|
