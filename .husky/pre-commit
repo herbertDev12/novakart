@@ -1,1 +1,10 @@
+set -e
+export HOOK_STAGE=commit
+
+echo "──────────── pre-commit ────────────"
+
 pnpm exec lint-staged
+bash scripts/check-frontend.sh
+bash scripts/check-backend.sh
+
+echo "──────────── ok ────────────"
