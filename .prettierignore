@@ -9,3 +9,7 @@
 # would rewrite ~50 working files for a purely cosmetic reason nobody asked
 # for. If this package gets hand-edited regularly in the future, revisit this.
 packages/components/
+
+# Generated lockfile — owned by pnpm, never hand-formatted. Matters because
+# lint-staged runs prettier over staged *.yaml files.
+pnpm-lock.yaml

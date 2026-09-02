@@ -11,8 +11,7 @@ namespace NovaKart.WebApi.IntegrationTests;
 
 public sealed class ProductsApiFixture : IAsyncLifetime
 {
-    private readonly PostgreSqlContainer _container = new PostgreSqlBuilder()
-        .WithImage("postgres:15-alpine")
+    private readonly PostgreSqlContainer _container = new PostgreSqlBuilder("postgres:15-alpine")
         .WithDatabase("novakart_tests")
         .Build();
 
